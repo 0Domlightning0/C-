@@ -1,0 +1,20 @@
+//Dominik Wrobel
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    int legnth, width;
+    cout << "What is the legenth \n";
+    cin >> legnth;
+    cout << "What is the width \n";
+    cin >> width;
+    cout << "The perimeter Area is " << (width * 2) + (legnth * 2);
+    cout << "\n";
+    double perimeter = (width * 2) + (legnth * 2);
+    if (perimeter == 900)
+        cout << "yayyy";
+    return 0;
+}
