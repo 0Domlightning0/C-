@@ -1,5 +1,7 @@
 // Dominik Wrobel - 400508446
 // Lab2 - 3
+
+// Library Assignment
 #include <iostream>
 #include <fstream>
 #include <cmath>
@@ -11,13 +13,21 @@ int main() {
 
     double Init, Inc, Final, Volume;
 
-    cout << "Input your Inital Radius, Incrament, and Final Radius seperated by one space";
+    cout << "Input your Inital Radius, Incrament, and Final Radius seperated by one space " << endl;
 
     cin >> Init >> Inc >> Final;
 
-    while (Init + Inc <= Final or Init == Final)
+    // Checks if the Radius is or will be equal to or less than the max Radius
+    while (Init + Inc <= Final or Init == Final or Init < Final)
     {
-        Volume = M_PI * 4
+        // Calculated the Volume of a Circle
+        Volume = (M_PI * 4 * pow(Init, 3)) / 3;
+
+        cout << "Radius in M: " << Init << "    Volume in M^3: " << Volume << endl;
+
+        Init += Inc;
+
+
     }
 
 
