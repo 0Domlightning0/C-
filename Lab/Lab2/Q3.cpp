@@ -10,20 +10,24 @@ using namespace std;
 void FindClosest(int In1, int In2, int In3);
 
 int main() {
+    // Variable Assignment
     int Yes = 1, In1, In2, In3;
-    while (Yes == 1) {
-        cout << " Please give the first number" << endl;
-        cin >> In1;
-        cout << " Please give the second number" << endl;
-        cin >> In2;
-        cout << " Please give the third number" << endl;
-        cin >> In3;
-        FindClosest(In1, In2, In3);
+
+    // Asking for Varibles
+    cout << " Please give the first number" << endl;
+    cin >> In1;
+    cout << " Please give the second number" << endl;
+    cin >> In2;
+    cout << " Please give the third number" << endl;
+    cin >> In3;
+
+    //Call
+    FindClosest(In1, In2, In3);
 
 
 
 
-    }
+    
 
 
 
@@ -43,7 +47,7 @@ void FindClosest(int In1, int In2, int In3) {
 
     // If the first input is less than or equal to the 2nd and 3rd, it will print out the answer
     if (abs(In1) <= abs(In2) and abs(In1) <= abs(In3)) {
-        cout << "the lowest number is " << In1 << endl << endl;
+        cout << "The number closest to 0 is " << In1 << endl;
 
     }
 
@@ -51,7 +55,7 @@ void FindClosest(int In1, int In2, int In3) {
     This will only run if the first argument isnt true
     */
     else if (abs(In2) <= abs(In3) and abs(In2) <= abs(In1)) {
-        cout << "the lowest number is " << In2 << endl << endl;
+        cout << "The number closest to 0 is " << In2 << endl;
     }
 
 
@@ -60,18 +64,8 @@ void FindClosest(int In1, int In2, int In3) {
     This will only run if the first and second arguments arent true
     */
     else if (abs(In3) <= abs(In1) and abs(In3) <= abs(In2)) {
-        cout << "the lowest number is " << In3 << endl << endl;
+        cout << "The number closest to 0 is " << In3 << endl;
     }
-
+    
+    cout << " Input 0 0 0 to Exit" << endl << endl;
 }
-
-
-
-
-
-
-
-
-
-
-
