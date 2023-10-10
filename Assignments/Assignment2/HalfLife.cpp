@@ -154,25 +154,48 @@ tuple<double, double, double, double> HighestTwo() {
 int main() {
     using namespace std; 
 
-    double Avg, NumData2; 
+    double Avg, NumData2, yes = 0; 
+
+    string MenuOpt;
 
     double Biggest, BiggestPos, SBiggest, SBiggestPos;
 
-    
-    /*
-     for (int i = 1; i < 6; i++) {
+    while (yes == 0){
+    cout << "---------------------------------------------------------------------------------------------------" << endl << endl;
+    cout << "[S] -- Patient Summary" << endl;
+    cout << "[H] -- Highest Two Averages" << endl;
+    cout << "[E] -- Exit Program" << endl;
+    cout << "Enter menu option: ";
+    cin >> MenuOpt;
+    cout << endl;
 
-        tie(Avg, NumData2) = analyzeData(i);
+    if (MenuOpt == "S") {
+        double MenuOpt2;
+        cout << "Which patient would you like to analyize(1-5): ";
+        cin >> MenuOpt2;
+        cout << endl;
+        tie(Avg, NumData2) = analyzeData(MenuOpt2);
 
-        cout << Avg << endl;
+        cout << "The average HalfLife of patient #" << MenuOpt2 << " is " << Avg << " collected from " << NumData2 << " Data points"<<endl;
+
+
     }
     
-    
-    
-    */
-  
-     
-    tie(Biggest, BiggestPos, SBiggest, SBiggestPos) = HighestTwo();
+    if (MenuOpt == "H"){
 
-    cout << Biggest << " " << BiggestPos << " " << SBiggest << " " << SBiggestPos;
+        tie(Biggest, BiggestPos, SBiggest, SBiggestPos) = HighestTwo();
+
+        cout << "Highest Average HalfLife is " << Biggest << " hours belonging to patient #" << BiggestPos << endl;
+        cout << "Second Highest Average HalfLife is " << SBiggest << " hours belonging to patient #" << SBiggestPos << endl << endl;
+
+    }
+    
+    if (MenuOpt == "E") {
+        yes = 1;
+
+    }
+
+    
+ 
+}
 }
