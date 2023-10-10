@@ -107,14 +107,31 @@ tuple<double,double> analyzeData(int PatNumIn) {
     return make_tuple( Tot / NumData, NumData );
 }
 
-
+// Returns Four double variables
 tuple<double, double, double, double> HighestTwo() {
+
+    /*
+    Biggest = Biggest Average HalfLife
+    SBiggest = Second Biggest Average HalfLife
+    PlaceH = Place Holder Value to allow swapping of values
+    BiggestPos = The Position/ patient number of the Biggest average HalfLife
+    SBiggestPos = The Position/ patient number of the Second Biggest average HalfLife
+    */
 
     double Biggest = 0, SBiggest = 0, PlaceH = 0, BiggestPos = 0, SBiggestPos = 0;
 
-    using namespace std;
+    // Avg = Calculated Average HalfLife
+    // NumData2 = Number of Data points collected from
+    double Avg = 0, NumData2= 0;
+    
 
-    double Avg = 0, NumData2= 0, Avg2 = 0;
+
+
+    /*
+    This for loop gets the Average and first checks if it is bigger than the second biggest Average
+    If it is bigger, it replaces the SBiggest and the SBiggestPos with its own
+    If the SBiggest is bigger than the Biggest, the two Averages and Posititons swap
+    */
 
     for (int i = 1; i < 6; i++) {
           
@@ -143,7 +160,7 @@ tuple<double, double, double, double> HighestTwo() {
 
 
     }
-    
+    // Function returns four variables
     return make_tuple(Biggest, BiggestPos, SBiggest, SBiggestPos);
 }
 
@@ -154,13 +171,13 @@ tuple<double, double, double, double> HighestTwo() {
 int main() {
     using namespace std; 
 
-    double Avg, NumData2, yes = 0; 
+    double Avg, NumData2, LoopActive = 1; 
 
     string MenuOpt;
 
     double Biggest, BiggestPos, SBiggest, SBiggestPos;
 
-    while (yes == 0){
+    while (LoopActive == 1){
     cout << "---------------------------------------------------------------------------------------------------" << endl << endl;
     cout << "[S] -- Patient Summary" << endl;
     cout << "[H] -- Highest Two Averages" << endl;
@@ -191,7 +208,7 @@ int main() {
     }
     
     if (MenuOpt == "E") {
-        yes = 1;
+        LoopActive = 0;
 
     }
 
