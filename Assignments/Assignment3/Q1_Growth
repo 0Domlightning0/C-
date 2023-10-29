@@ -1,0 +1,35 @@
+// Assignment3_1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    //Variable Assignment
+    // MaxGrowthRate = MGR, SaturationConstant = SC, InitalConcentration = IC
+
+    int IC, SC, bot, top;
+    double MGR;
+
+
+    SC = bot + rand() % (top + 1 - bot);
+
+    cout << "PLease input Inital Concentration: ";
+    cin >> IC;
+    cout << endl;
+
+    cout << "Please input Max Growth Rate: ";
+    cin >> MGR;
+    cout << endl;
+
+    if (25 <= IC and IC <= 75 and IC % 5 == 0) {
+
+        
+    }
+
+
+    
+}
+
