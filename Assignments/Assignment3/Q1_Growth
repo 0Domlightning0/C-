@@ -8,10 +8,13 @@ using namespace std;
 int main()
 {
     //Variable Assignment
-    // MaxGrowthRate = MGR, SaturationConstant = SC, InitalConcentration = IC
+    // MaxGrowthRate = MGR, SaturationConstant = SC, InitalConcentration = IC, Dilution Rate = DR
 
     int IC, SC, bot, top;
-    double MGR;
+    double MGR ,  DR;
+
+    bot = 2;
+    top = 7;
 
 
     SC = bot + rand() % (top + 1 - bot);
@@ -26,10 +29,9 @@ int main()
 
     if (25 <= IC and IC <= 75 and IC % 5 == 0) {
 
-        
+        MGR = (1 - sqrt(SC / (SC + IC)));
     }
 
 
-    
-}
 
+}
