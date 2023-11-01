@@ -11,7 +11,7 @@ int main()
     // MaxGrowthRate = MGR, SaturationConstant = SC, InitalConcentration = IC, Dilution Rate = DR
 
     int IC, SC, bot, top;
-    double MGR ,  DR;
+    double MGR, DR;
 
     bot = 2;
     top = 7;
@@ -19,17 +19,28 @@ int main()
 
     SC = bot + rand() % (top + 1 - bot);
 
-    cout << "PLease input Inital Concentration: ";
+    cout << "PLease input Inital Concentration at is divisible by 5 (Between 25 and 75): ";
     cin >> IC;
     cout << endl;
 
-    cout << "Please input Max Growth Rate: ";
+    cout << "Please input Max Growth Rate(Between 0.2 and 0.7): ";
     cin >> MGR;
     cout << endl;
 
     if (25 <= IC and IC <= 75 and IC % 5 == 0) {
 
-        MGR = (1 - sqrt(SC / (SC + IC)));
+        DR = MGR * (1.0 - (sqrt(  (  (double)SC / ( (double)SC + (double)IC )  )  )  )  );
+
+        cout << DR; 
+
+        if (DR >= 0.35 and DR <= 0.45) {
+            cout << "Kinetic parameters are acceptable";
+        }
+        else {
+            cout << "Kinetic parameters are not acceptable";
+
+        }
+        
     }
 
 
