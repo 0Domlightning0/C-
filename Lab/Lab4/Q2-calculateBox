@@ -1,0 +1,74 @@
+// Dominik Wrobel - 400508446
+// 
+// Lab4-Q1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+
+#include <tuple>
+
+using namespace std;
+
+bool calculateBox(double length, double width, double height,
+    double* surfaceArea, double* volume);
+
+
+int main()
+{
+    //variable assignement
+    double length, width, height, volume, surfaceArea;
+    cout << "Input Length: ";
+    cin >> length;
+    cout << endl;
+
+    cout << "Input Width: ";
+    cin >> width;
+    cout << endl;
+
+    cout << "Input Height: ";
+    cin >> height;
+    cout << endl;
+
+    calculateBox(length, width, height,
+        &surfaceArea, &volume);
+
+
+
+    //True
+    if (calculateBox(length, width, height, &surfaceArea, &volume) == true){
+
+        cout << "Volume: " << volume;
+        cout << endl;
+        cout << "Surface Area: " << surfaceArea;
+    }
+
+
+
+    //False
+    if (calculateBox(length, width, height, &surfaceArea, &volume) == false) {
+        cout << "Error in inputs";
+    }
+}
+
+
+
+bool calculateBox(double length, double width, double height,
+    double* surfaceArea, double* volume) {
+
+    if (length > 0 and width > 0 and height > 0) {
+
+        *volume = length * width * height;
+
+        *surfaceArea = 2 * (length * width) + 2 * (width * height) + 2 * (length * height);
+
+        return true;
+    }
+
+    else {
+        return false;
+    }
+   
+
+
+
+}
