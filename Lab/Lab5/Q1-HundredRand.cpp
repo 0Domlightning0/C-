@@ -1,3 +1,5 @@
+// dominik Wrobel - 400508446
+// 
 // Lab5-Q1.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
@@ -32,8 +34,8 @@ int main()
 
 
 
-   }
-    cout << endl << endl << Total/100; 
+    }
+    cout << endl << endl << Total / 100;
 
     Max(array);
 }
