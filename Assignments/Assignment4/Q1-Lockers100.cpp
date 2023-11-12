@@ -22,10 +22,13 @@ int main() {
 
     }
 
+    // Runs for each student
     for (int i = 1; i < 101; i++) {
 
+        // Starts at the students number, and increases by the students number each time
         for (int j = i; j < 101; j + i) {
 
+            // If the locker is open, close it
             if (Lockers[j - 1] == 1) {
 
                 Lockers[j - 1] = 0;
@@ -33,7 +36,7 @@ int main() {
 
 
             }
-
+            // If the locker is closed, open it
             else if (Lockers[j - 1] == 0) {
 
                 Lockers[j - 1] = 1;
@@ -42,10 +45,13 @@ int main() {
         }
     }
 
-    cout << "The lockers that are still open are: ";
+    cout << "The lockers that are open are: ";
 
+    // Goes through the lockers after the closing/opening
     for (int i = 0; i < 100; i++) {
+        // Checks if the lockers are open
         if (Lockers[i] == 1) {
+            // Arrays start at 0 but the lockers start at 1, so I have to add 1 to i
             cout << i+1 << " ";
         }
     }
