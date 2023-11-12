@@ -1,3 +1,4 @@
+// Dominik Wrobel - 400508446
 // Assignment4-Q2.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
@@ -16,7 +17,7 @@ int main()
     // Min is the smallest number avalable to be generated
     int min = 0;
     // The amount of numbers that can be produced ex 0-9 is 10 numbers
-    int range = 2;
+    int range = 10;
     // The number that is being inputted and checked
     int num;
     
