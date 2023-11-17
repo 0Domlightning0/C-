@@ -5,18 +5,18 @@
 
 using namespace std;
 
-int balls(int*, int*);
+int Point(int*, int*);
 
 int main()
 {
     int a = 0, b = 23;
 
-    balls(&a, &b);
+    Point(&a, &b);
 
     cout << a << b;
 }
 
-int balls(int* yes, int* maybe) {
+int Point(int* yes, int* maybe) {
     *yes = 7;
     *maybe = 9;
     return 0;
