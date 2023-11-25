@@ -1,5 +1,7 @@
 #include <iostream>
+#include <fstream>
 #include <string>
+#include <string.h>
 #include <fstream>
 using namespace std;
 
@@ -19,7 +21,7 @@ int main()
 
 	int NumA = 0, NumT = 0, NumC = 0, NumG = 0;
 
-
+	
 
 
 	// Reading the file
@@ -33,31 +35,31 @@ int main()
 	for (int i = 0; i < 20; i++) {
 		outfile >> array[i];
 		//cout << array[i] << endl;
-
-
+			
+		
 	}
-
+	
 	// Runs the code to convert one line of DNA to RNA 20 times to complete the entire file
-
-	cout << array[0];
-	cout << 0;
-	cout << DNAtoRNA(array[0], RNA) << endl;
-	file_enter << DNAtoRNA(array[0], RNA) << endl;
-	cout << countDNAnt(array[0], &NumA, &NumT, &NumC, &NumG);
-
+	for (int i = 0; i < 20; i++) {
+		
+		
+		//cout << DNAtoRNA(array[i], RNA) << endl;
+		file_enter << DNAtoRNA(array[i], RNA) << endl;
+		cout << countDNAnt(array[0], &NumA, &NumT, &NumC, &NumG);
+	}
 }
 
 // Takes one line from the DNA array and an empty string to insert the RNA string into
-string DNAtoRNA(string array, string RNA) {
+string DNAtoRNA(string array,string RNA) {
 	string DNA = "";
 	DNA = array;
 	for (int j = 0; j < 100; j++) {
 		// If the letter it found is equal to T
 		if (DNA[j] == 'T') {
 			// The program will convert it into a U
-			DNA[j] = 'U';
+				DNA[j] = 'U';
 		}
-
+			
 	}
 	RNA = DNA;
 	return RNA;
@@ -65,7 +67,7 @@ string DNAtoRNA(string array, string RNA) {
 
 
 
-string countDNAnt(string DNA, int* NumA, int* NumT, int* NumC, int* NumG) {
+string countDNAnt(string DNA, int* NumA, int* NumT, int* NumC, int* NumG){
 	for (int j = 0; j < 100; j++) {
 		if (DNA[j] == 'T') {
 			*NumT += 1;
@@ -81,6 +83,7 @@ string countDNAnt(string DNA, int* NumA, int* NumT, int* NumC, int* NumG) {
 		}
 	}
 
-
+	
 	return 0;
 }
+
